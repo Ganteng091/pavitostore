@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Top Up Free Fire</title>
+<a href="topup.html" class="back-btn">Kembali ke halaman awal</a>
+<style>
+body {
+  background: #0a0a0a;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+/* DIAMOND */
+.diamond-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.diamond-card {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  width: 160px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.diamond-card span {
+  color: orange;
+  font-weight: bold;
+}
+
+.diamond-card:hover {
+  transform: scale(1.05);
+}
+
+.diamond-card.active {
+  border: 2px solid #0ff;
+  box-shadow: 0 0 20px #0ff;
+}
+
+/* BUTTON */
+.btn {
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0ff, #a0f);
+  color: white;
+  cursor: pointer;
+}
+
+/* FORM */
+.form-box {
+  display: none;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: none;
+  width: 200px;
+}
+
+/* PAYMENT */
+.payment {
+  margin-top: 15px;
+}
+
+.payment span {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background: #111;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #0ff;
+}
+</style>
+
+</head>
+<body>
+
+
+<h2>Top Up Free Fire</h2>
+
+<!-- PILIH DIAMOND -->
+<div class="diamond-container">
+
+<div class="diamond-card" onclick="pilihDiamond('5 Diamond', 901)">
+<p>5 Diamond</p><span>Rp 901</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('12 Diamond', 1802)">
+<p>12 Diamond</p><span>Rp 1.802</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('50 Diamond', 7207)">
+<p>50 Diamond</p><span>Rp 7.207</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('70 Diamond', 9009)">
+<p>70 Diamond</p><span>Rp 9.009</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('140 Diamond', 18018)">
+<p>140 Diamond</p><span>Rp 18.018</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('355 Diamond', 45045)">
+<p>355 Diamond</p><span>Rp 45.045</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('720 Diamond', 90090)">
+<p>720 Diamond</p><span>Rp 90.090</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('1450 Diamond', 180180)">
+<p>1450 Diamond</p><span>Rp 180.180</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('2180 Diamond', 270270)">
+<p>2180 Diamond</p><span>Rp 270.270</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('3640 Diamond', 450450)">
+<p>3640 Diamond</p><span>Rp 450.450</span></div>
+
+<div class="diamond-card" onclick="pilihDiamond('7290 Diamond', 900901)">
+<p>7290 Diamond</p><span>Rp 900.901</span></div>
+
+</div>
+
+<!-- CHECKOUT BUTTON -->
+<button onclick="bukaForm()" class="btn">Checkout</button>
+
+<!-- FORM (MUNCUL SETELAH KLIK CHECKOUT) -->
+<div class="form-box" id="formBox">
+
+  <h3>Data Akun</h3>
+  <input type="text" id="id" placeholder="Masukkan ID"><br>
+  <input type="text" id="server" placeholder="ID Server"><br>
+  <input type="text" id="nick" placeholder="Nickname"><br>
+
+  <h3>Metode Pembayaran</h3>
+  <div class="payment">
+    <span>GoPay</span>
+    <span>OVO</span>
+    <span>DANA</span>
+    <span>PayPal</span>
+  </div>
+
+  <h3>Ringkasan</h3>
+  <p>Item: <span id="item">-</span></p>
+  <p>Total: <span id="total">IDR 0</span></p>
+
+  <button onclick="kirimWA()" class="btn">Beli Sekarang</button>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+let selectedDiamond = "";
+let selectedHarga = 0;
+
+function pilihDiamond(nama, harga){
+  selectedDiamond = nama;
+  selectedHarga = harga;
+
+  document.getElementById("item").innerText = nama;
+  document.getElementById("total").innerText = "IDR " + harga;
+
+  let cards = document.querySelectorAll(".diamond-card");
+  cards.forEach(card => card.classList.remove("active"));
+  event.currentTarget.classList.add("active");
+}
+
+function bukaForm(){
+  if(!selectedDiamond){
+    alert("Pilih diamond dulu!");
+    return;
+  }
+
+  document.getElementById("formBox").style.display = "block";
+}
+
+function kirimWA(){
+  let id = document.getElementById("id").value;
+  let server = document.getElementById("server").value;
+  let nick = document.getElementById("nick").value;
+
+  if(!id || !server || !nick){
+    alert("Isi semua data!");
+    return;
+  }
+
+  let pesan = `Bang gw mau topup Free Fire
+Item: ${selectedDiamond}
+Harga: IDR ${selectedHarga}
+Nickname: ${nick}
+ID: ${id}
+Server: ${server}`;
+
+  let url = `https://wa.me/6281770220902?text=${encodeURIComponent(pesan)}`;
+
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>

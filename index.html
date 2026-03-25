@@ -1,0 +1,80 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavito Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="logo">Pavito Store</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topup.html">Top Up</a></li>
+      <li><a href="jubel.html">Jubel</a></li>
+      <li><a href="joki.html">Joki</a></li>
+      <li><a href="rw.html">RW</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    <h2>Selamat Datang di Pavito Store</h2>
+    <p>Kami memiliki berbagai layanan games ml dan ff:</p>
+
+    <ul class="layanan">
+      <li>Top Up Game</li>
+      <li>Jubel (Mobile Legends & Free Fire)</li>
+      <li>Jasa MC / Rekber</li>
+      <li>Joki (Belum Buka)</li>
+      <li>Room Wangi (RW)</li>
+    </ul>
+
+    <h2 class="berita-title">Berita</h2>
+
+    <div class="berita-container">
+      <img src="berita1.png" alt="Berita 1">
+      <img src="berita2.png" alt="Berita 2">
+      <img src="berita3.png" alt="Berita 3">
+    </div>
+
+    </section>
+
+  <!-- MODAL FULL IMAGE -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImage">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.berita-container img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('fullImage');
+    const closeBtn = document.querySelector('.close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+    };
+
+    modal.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  </script>
+
+  <!-- FLOATING SOSMED -->
+  <div class="sosmed">
+    <a href="https://wa.me/6281770220902" target="_blank"><img src="wa.png" alt="WhatsApp"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+  </div>
+
+</body>
+</html>

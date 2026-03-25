@@ -1,0 +1,330 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #0ff, #a0f);
+  box-shadow: 0 0 15px #0ff, 0 0 30px #a0f;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #a0f;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.content {
+  padding: 50px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 32px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #a0f;
+}
+
+/* ===== LAYANAN LIST ===== */
+.layanan {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.layanan li {
+  margin: 10px 0;
+  font-size: 18px;
+  text-shadow: 0 0 5px #0ff;
+}
+
+/* ===== BERITA ===== */
+.berita-title {
+  margin-top: 50px;
+}
+
+.berita-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.berita-container img {
+  width: 250px;       /* ukuran fix biar sama semua */
+  height: 150px;      /* tinggi sama */
+  object-fit: cover;  /* crop biar rapi */
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #a0f;
+  transition: 0.3s;
+}
+
+.berita-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #a0f;
+}
+
+/* ===== MODAL FULL IMAGE ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #a0f;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #0ff;
+}
+
+/* ===== JUBEL BUTTON ===== */
+.jubel-info {
+  margin-top: 20px;
+}
+
+.jubel-info p {
+  margin: 10px 0;
+  font-size: 18px;
+  text-shadow: 0 0 5px #0ff;
+}
+
+.jubel-btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0ff, #a0f);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #a0f;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #a0f;
+}
+
+/* ===== FILTER HARGA ===== */
+.filter-box{
+  margin-top:20px;
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+}
+
+.filter-box input{
+  padding:8px;
+  border-radius:5px;
+  border:none;
+  outline:none;
+}
+
+/* ===== AKUN LIST ===== */
+.akun-list {
+  display: none;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap; /* biar 2 baris */
+  gap: 20px;
+}
+
+.akun-card {
+  background: #111;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #0ff;
+  transition: 0.3s;
+}
+
+.akun-card img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.akun-card:hover {
+  transform: scale(1.05);
+}
+
+.akun-info {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ===== DETAIL MODAL ===== */
+.gallery {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.gallery img{
+  width:200px;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.nav-btn{
+  background:#0ff;
+  border:none;
+  padding:5px 10px;
+  cursor:pointer;
+  border-radius:5px;
+}
+.detail-box {
+  background: #111;
+  padding: 20px;
+  margin: 10% auto;
+  width: 320px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #a0f;
+
+  max-height: 70vh; /* #STYLE.CSS SCROLL */
+  overflow-y: auto; /* biar bisa scroll */
+}
+
+/* NOTE:
+/* ===== ZOOM IMAGE ===== */
+.zoom-modal{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.95);
+  z-index:2000;
+}
+
+.zoom-content{
+  display:block;
+  max-width:90%;
+  max-height:90%;
+  margin:5% auto;
+  border-radius:10px;
+  box-shadow:0 0 20px #0ff,0 0 40px #a0f;
+}
+
+.zoom-close{
+  position:absolute;
+  top:20px;
+  right:40px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+.zoom-close:hover{
+  color:#0ff;
+}
+
+/* ===== SOSMED FLOATING ===== */
+.sosmed {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.sosmed img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #a0f;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sosmed img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #a0f;
+}
+.game-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.game-card {
+  text-decoration: none;
+  color: white;
+  background: #111;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0ff;
+  width: 200px;
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.game-card:hover {
+  transform: scale(1.05);
+}
+
+

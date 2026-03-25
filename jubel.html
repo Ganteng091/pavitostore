@@ -1,0 +1,265 @@
+﻿<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jubel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <h1 class="logo">pavito store</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topup.html">Top Up</a></li>
+      <li><a href="jubel.html">Jubel</a></li>
+      <li><a href="joki.html">Joki</a></li>
+      <li><a href="rw.html">RW</a></li>
+    </ul>
+  </nav>
+
+  <section class="content">
+    
+    <!-- #JUBEL.HTML - TEXT INFO -->
+    <div class="jubel-info">
+      <h2>JB Akun Amanah</h2>
+      <p>-100% GARANSI UANG KEMBALI JIKA TERKNA HB</p>
+      <p>-STOK AKUN TERBATAS</p>
+       <p>-JASA REKBER AMAN TERPERCAYA</p>
+       <p>-website created by zaim kn</p>
+    </div>
+
+    <!-- #JUBEL.HTML - BUTTON -->
+    <div class="jubel-btn">
+      <!-- #JUBEL.HTML - BUTTON BELI (CLICK EVENT) -->
+<button class="btn" onclick="showAkun()">Beli</button>
+
+      <a href="https://wa.me/6281770220902" target="_blank">
+        <button class="btn">Jual</button>
+      </a>
+
+      <a href="https://wa.me/6281770220902" target="_blank">
+        <button class="btn">Jasa MC / Rekber</button>
+      </a>
+    </div>
+
+    <!-- #JUBEL.HTML - FILTER HARGA -->
+    <div class="filter-box">
+      <input type="number" id="minHarga" placeholder="Min Harga" oninput="filterAkun()">
+      <input type="number" id="maxHarga" placeholder="Max Harga" oninput="filterAkun()">
+    </div>
+
+      <!-- #JUBEL.HTML - LIST AKUN (HIDDEN AWAL) -->
+    <div id="akunList" class="akun-list">
+
+      <!-- #JUBEL.HTML - AKUN 1 -->
+      <div class="akun-card" onclick="showDetail(['akun1.png','akun1gambar2.png'],'350000','Gusion KOF, clode prime, roger transformer, betrix prime, floryn sanrio, karina kof, hayabusa star, zhax lucybox #Akun1','Wing of judgment','READY','Moonton','YES','Pribadi')">
+        <img src="akun1.png">
+        <div class="akun-info">
+          <p>Harga: 350.000</p>
+          <p>Skin: Gusion KOF</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 2 -->
+      <div class="akun-card" onclick="showDetail(['akun2.png','akun2gambar2.png'],'20000','Karina KOF','Epic Recall','READY','Monton','YES','Pribadi')">
+        <img src="akun2.png">
+        <div class="akun-info">
+          <p>Harga: -</p>
+          <p>Skin: Karina KOF</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 3 -->
+      <div class="akun-card" onclick="showDetail(['akun3.png','akun3gambar2.png'],'30000','Legend Skin','Rare Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun3.png">
+        <div class="akun-info">
+          <p>Harga: -</p>
+          <p>Skin: Legend</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 4 -->
+      <div class="akun-card" onclick="showDetail(['akun4.png','akun4gambar2.png'],'40000','Epic Skin','Blue Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun4.png">
+        <div class="akun-info">
+          <p>Harga: -</p>
+          <p>Skin: Epic</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 5 -->
+      <div class="akun-card" onclick="showDetail(['akun5.png','akun5gambar2.png'],'50000','Rare Skin','Green Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun5.png">
+        <div class="akun-info">
+          <p>Harga: 50000</p>
+          <p>Skin: Rare</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 6 -->
+      <div class="akun-card" onclick="showDetail(['akun6.png','akun6gambar2.png'],'60000','Bundle Skin','Fire Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun6.png">
+        <div class="akun-info">
+          <p>Harga: 60000</p>
+          <p>Skin: Bundle</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 7 -->
+      <div class="akun-card" onclick="showDetail(['akun7.png','akun7gambar2.png'],'70000','Collector Skin','Gold Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun7.png">
+        <div class="akun-info">
+          <p>Harga: 70000</p>
+          <p>Skin: Collector</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 8 -->
+      <div class="akun-card" onclick="showDetail(['akun8.png','akun8gambar2.png'],'80000','Premium Skin','Ultra Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun8.png">
+        <div class="akun-info">
+          <p>Harga: 80000</p>
+          <p>Skin: Premium</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 9 -->
+      <div class="akun-card" onclick="showDetail(['akun9.png','akun9gambar2.png'],'90000','Mix Skin','Rainbow Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun9.png">
+        <div class="akun-info">
+          <p>Harga: 90000</p>
+          <p>Skin: Mix</p>
+        </div>
+      </div>
+
+      <!-- #JUBEL.HTML - AKUN 10 -->
+      <div class="akun-card" onclick="showDetail(['akun10.png','akun10gambar2.png'],'100000','Sultan Skin','Diamond Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun10.png">
+        <div class="akun-info">
+          <p>Harga: 100000</p>
+          <p>Skin: Sultan</p>
+        </div>
+      </div>
+      <div class="akun-card" onclick="showDetail('akun10.png','100000','Sultan Skin','Diamond Recall','READY','Moonton','YES','Pribadi')">
+        <img src="akun10.png">
+        <div class="akun-info">
+          <p>Harga: 100000</p>
+          <p>Skin: Sultan</p>
+        </div>
+      </div>
+
+    </div>
+      </div>
+
+    </div>
+
+    <!-- #JUBEL.HTML - DETAIL AKUN (MODAL) -->
+    <div id="detailModal" class="modal">
+      <span class="close" onclick="closeDetail()">&times;</span>
+      <div class="detail-box">
+        <!-- #JUBEL.HTML - GALERI -->
+        <div class="gallery">
+          <button onclick="prevImg()" class="nav-btn">❮</button>
+          <img id="detailImg" src="" onclick="openZoom(this.src)">
+          <button onclick="nextImg()" class="nav-btn">❯</button>
+        </div>
+
+        <h2>Detail Akun</h2>
+        <p id="d_harga"></p>
+        <p id="d_skin"></p>
+        <p id="d_recall"></p>
+        <p id="d_status"></p>
+        <p id="d_login"></p>
+        <p id="d_ref"></p>
+        <p id="d_stok"></p>
+
+        <!-- #JUBEL.HTML - ACTION BUTTON -->
+        <a id="downloadBtn" download>
+          <button class="btn">Download Gambar</button>
+        </a>
+
+        <a href="https://api.whatsapp.com/send/?phone=6281770220902&text=Bang+gw+mau+beli+akun&app_absent=0" target="_blank">
+          <button class="btn">Order via WA</button>
+        </a>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- #JUBEL.HTML - SCRIPT -->
+  <script>
+    function showAkun() {
+      document.getElementById('akunList').style.display = 'flex';
+    }
+
+    // #JUBEL.HTML - FILTER SCRIPT
+    function filterAkun(){
+      const min = parseInt(document.getElementById('minHarga').value) || 0;
+      const max = parseInt(document.getElementById('maxHarga').value) || Infinity;
+
+      const cards = document.querySelectorAll('.akun-card');
+
+      cards.forEach(card => {
+        const hargaText = card.querySelector('.akun-info p').innerText;
+        const harga = parseInt(hargaText.replace(/[^0-9]/g,''));
+
+        if(harga >= min && harga <= max){
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    let images = [];
+    let current = 0;
+
+    function showDetail(imgArr, harga, skin, recall, status, login, ref, stok) {
+      document.getElementById('detailModal').style.display = 'block';
+      images = imgArr;
+      current = 0;
+      updateImg();
+
+      document.getElementById('d_harga').innerText = 'HARGA : ' + harga;
+      document.getElementById('d_skin').innerText = 'SPEK SKIN : ' + skin;
+      document.getElementById('d_recall').innerText = 'RECALL : ' + recall;
+      document.getElementById('d_status').innerText = 'STATUS AKUN : ' + status;
+      document.getElementById('d_login').innerText = 'LOGIN : ' + login;
+      document.getElementById('d_ref').innerText = 'ALL REFF : ' + ref;
+      document.getElementById('d_stok').innerText = 'STOK : ' + stok;
+    }
+
+    function updateImg(){
+      document.getElementById('detailImg').src = images[current];
+      document.getElementById('downloadBtn').href = images[current];
+    }
+
+    function nextImg(){
+      current = (current + 1) % images.length;
+      updateImg();
+    }
+
+    function prevImg(){
+      current = (current - 1 + images.length) % images.length;
+      updateImg();
+    }
+
+    function closeDetail() {
+      document.getElementById('detailModal').style.display = 'none';
+    }
+
+    // #JUBEL.HTML - ZOOM SCRIPT
+    function openZoom(src){
+      document.getElementById('zoomModal').style.display = 'block';
+      document.getElementById('zoomImg').src = src;
+    }
+
+    function closeZoom(){
+      document.getElementById('zoomModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
