@@ -164,7 +164,8 @@ h2 {
 .filter-box{
   margin-top:20px;
   display:flex;
-  justify-content:flex-end;
+  flex-direction: column; /* 🔥 ini kuncinya */
+  align-items: flex-end;  /* biar tetap di kanan */
   gap:10px;
 }
 
