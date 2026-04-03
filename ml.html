@@ -1,34 +1,59 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Top Up Mobile Legends </title>
-<a href="topup.html" class="back-btn">Kembali ke halaman awal</a>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top Up Mobile Legends</title>
 
 <style>
 body {
+  margin: 0;
   background: #0a0a0a;
   color: white;
   font-family: Arial;
   text-align: center;
 }
 
-/* DIAMOND */
-.diamond-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
+/* BANNER IKLAN */
+.banner {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
 }
 
+.banner img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 8px 15px;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #0ff;
+}
+
+/* DIAMOND GRID */
+.diamond-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+/* CARD */
 .diamond-card {
   background: #111;
   padding: 15px;
   border-radius: 10px;
-  width: 160px;
   cursor: pointer;
   box-shadow: 0 0 10px #0ff;
+  transition: 0.3s;
 }
 
 .diamond-card span {
@@ -67,14 +92,11 @@ input {
   margin: 5px;
   border-radius: 8px;
   border: none;
-  width: 200px;
+  width: 80%;
+  max-width: 250px;
 }
 
 /* PAYMENT */
-.payment {
-  margin-top: 15px;
-}
-
 .payment span {
   display: inline-block;
   margin: 5px;
@@ -83,95 +105,67 @@ input {
   border-radius: 8px;
   box-shadow: 0 0 10px #0ff;
 }
-</style>
 
+/* RESPONSIVE KHUSUS HP */
+@media (max-width: 600px) {
+  h2 {
+    font-size: 18px;
+  }
+}
+</style>
 </head>
+
 <body>
+
+<!-- BANNER -->
+<div class="banner">
+  <img src="iklan.png" alt="Iklan">
+</div>
+
+<a href="topup.html" class="back-btn">Kembali</a>
 
 <h2>Top Up Mobile Legends By pavito store</h2>
 
-<!-- PILIH DIAMOND -->
+<!-- DIAMOND -->
 <div class="diamond-container">
 
-<div class="diamond-card" onclick="pilihDiamond('3 Diamond', 1171)">
+<div class="diamond-card" onclick="pilihDiamond('3 Diamond',1171)">
 <p>3 Diamond</p><span>Rp 1.171</span></div>
 
-<div class="diamond-card" onclick="pilihDiamond('5 Diamond', 1423)">
+<div class="diamond-card" onclick="pilihDiamond('5 Diamond',1423)">
 <p>5 Diamond</p><span>Rp 1.423</span></div>
 
-<div class="diamond-card" onclick="pilihDiamond('12 Diamond', 3323)">
-<p>12 Diamond (11+1)</p><span>Rp 3.323</span></div>
+<div class="diamond-card" onclick="pilihDiamond('12 Diamond',3323)">
+<p>12 Diamond</p><span>Rp 3.323</span></div>
 
-<div class="diamond-card" onclick="pilihDiamond('19 Diamond', 5223)">
-<p>19 Diamond (17+2)</p><span>Rp 5.223</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('28 Diamond', 7600)">
-<p>28 Diamond (25+3)</p><span>Rp 7.600</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('44 Diamond', 11400)">
-<p>44 Diamond</p><span>Rp 11.400</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('59 Diamond', 15200)">
-<p>59 Diamond</p><span>Rp 15.200</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('85 Diamond', 21850)">
-<p>85 Diamond</p><span>Rp 21.850</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('170 Diamond', 43700)">
-<p>170 Diamond</p><span>Rp 43.700</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('240 Diamond', 61750)">
-<p>240 Diamond</p><span>Rp 61.750</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('296 Diamond', 76000)">
-<p>296 Diamond</p><span>Rp 76.000</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('408 Diamond', 104500)">
-<p>408 Diamond</p><span>Rp 104.500</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('568 Diamond', 142500)">
-<p>568 Diamond</p><span>Rp 142.500</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('875 Diamond', 218500)">
-<p>875 Diamond</p><span>Rp 218.500</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('2010 Diamond', 475000)">
-<p>2010 Diamond</p><span>Rp 475.000</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('4830 Diamond', 1140000)">
-<p>4830 Diamond</p><span>Rp 1.140.000</span></div>
-
- <div class="diamond-card" onclick="pilihDiamond('1 wdp', 30000)">
-<p>1 Wdp</p><span>30.000</span></div>
-
-<div class="diamond-card" onclick="pilihDiamond('2 wdp', 60000)">
-<p>2 Wdp</p><span>60.000</span></div>
+<div class="diamond-card" onclick="pilihDiamond('19 Diamond',5223)">
+<p>19 Diamond</p><span>Rp 5.223</span></div>
 
 </div>
-<!-- CHECKOUT BUTTON -->
+
 <button onclick="bukaForm()" class="btn">Checkout</button>
 
 <!-- FORM -->
 <div class="form-box" id="formBox">
 
-  <h3>Data Akun</h3>
-  <input type="text" id="id" placeholder="Masukkan ID"><br>
-  <input type="text" id="server" placeholder="ID Server"><br>
-  <input type="text" id="nick" placeholder="Nickname"><br>
+<h3>Data Akun</h3>
+<input type="text" id="id" placeholder="Masukkan ID"><br>
+<input type="text" id="server" placeholder="ID Server"><br>
+<input type="text" id="nick" placeholder="Nickname"><br>
 
-  <h3>Metode Pembayaran</h3>
-  <div class="payment">
-    <span>GoPay</span>
-    <span>OVO</span>
-    <span>DANA</span>
-    <span>PayPal</span>
-  </div>
+<h3>Metode Pembayaran</h3>
+<div class="payment">
+<span>GoPay</span>
+<span>OVO</span>
+<span>DANA</span>
+<span>PayPal</span>
+</div>
 
-  <h3>Ringkasan</h3>
-  <p>Item: <span id="item">-</span></p>
-  <p>Total: <span id="total">IDR 0</span></p>
+<h3>Ringkasan</h3>
+<p>Item: <span id="item">-</span></p>
+<p>Total: <span id="total">IDR 0</span></p>
 
-  <button onclick="kirimWA()" class="btn">Beli Sekarang</button>
+<button onclick="kirimWA()" class="btn">Beli Sekarang</button>
 
 </div>
 
@@ -196,7 +190,6 @@ function bukaForm(){
     alert("Pilih diamond dulu!");
     return;
   }
-
   document.getElementById("formBox").style.display = "block";
 }
 
@@ -210,7 +203,7 @@ function kirimWA(){
     return;
   }
 
-  let pesan = `Bang gw mau topup Mobile Legends
+  let pesan = `Bang gw mau topup ML
 Item: ${selectedDiamond}
 Harga: IDR ${selectedHarga}
 Nickname: ${nick}
@@ -218,7 +211,6 @@ ID: ${id}
 Server: ${server}`;
 
   let url = `https://wa.me/6281770220902?text=${encodeURIComponent(pesan)}`;
-
   window.open(url, '_blank');
 }
 </script>
